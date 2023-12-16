@@ -17,10 +17,9 @@ public struct Day2P2Runner: Runner {
   // Returns the ID of any game thats possible
   public static func process(line: String) async throws -> Int? {
     guard let game = decodeGame(line: line) else {
-      return 0
+      throw Error.invalidInput
     }
     let mins = findMinimumColorValues(game: game)
-    
     return mins.blue * mins.green * mins.red
   }
   

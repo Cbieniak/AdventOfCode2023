@@ -22,7 +22,7 @@ let package = Package(
         .testTarget(
           name: "AdventOfCodeTests",
           dependencies: ["AdventOfCode"],
-          resources: [.process("Resources/ExecutorTestData.txt")]
+          resources: [.process("Resources")]
         )
     ]
 )

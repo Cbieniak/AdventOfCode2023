@@ -17,7 +17,7 @@ let package = Package(
             dependencies: [
                 .product(name: "ArgumentParser", package: "swift-argument-parser"),
             ],
-            resources: [.process("Resources/Day1.txt")]
+            resources: [.process("Resources/Day1.txt"), .process("Resources/Day2.txt")]
         ),
         .testTarget(
           name: "AdventOfCodeTests",

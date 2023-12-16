@@ -12,9 +12,9 @@ final class Day2Tests: XCTestCase {
   
   func testCreatingRound() {
     
-    XCTAssertEqual(Round(substring: "3 blue, 4 red"), Round(green: nil, blue: 3, red: 4))
+    XCTAssertEqual(Round(substring: "3 blue, 4 red"), Round(green: 0, blue: 3, red: 4))
     XCTAssertEqual(Round(substring: "1 red, 2 green, 6 blue"), Round(green: 2, blue: 6, red: 1))
-    XCTAssertEqual(Round(substring: "4 red"), Round(green: nil, blue: nil, red: 4))
+    XCTAssertEqual(Round(substring: "4 red"), Round(green: 0, blue: 0, red: 4))
   }
   
   func testCreatingGame() {
@@ -25,5 +25,15 @@ final class Day2Tests: XCTestCase {
       .init(green: 2)
     ])
     XCTAssertEqual(Game(string: testString) , expected)
+  }
+  
+  func testFindMinimumColorValues() {
+    let game = Game(id: 1, rounds: [
+      .init(blue: 3, red: 4),
+      .init(green: 1, blue: 6, red: 1),
+      .init(green: 2)
+    ])
+    
+    XCTAssertEqual(Day2P2Runner.findMinimumColorValues(game: game), Round(green: 2, blue: 6, red: 4))
   }
 }

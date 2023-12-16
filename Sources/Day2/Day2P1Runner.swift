@@ -8,7 +8,7 @@
 import Foundation
 import RegexBuilder
 
-public struct Day2Runner: Runner {
+public struct Day2P1Runner: Runner {
   
   enum Error: LocalizedError {
     case invalidInput
@@ -40,7 +40,7 @@ public struct Day2Runner: Runner {
   }
 }
 
-struct Game: Equatable {
+public struct Game: Equatable {
   let id: Int
   let rounds: [Round]
   
@@ -73,13 +73,13 @@ struct Game: Equatable {
   }
 }
 
-struct Round: Equatable {
+public struct Round: Equatable {
   
-  var green: Int?
-  var blue: Int?
-  var red: Int?
+  var green: Int = 0
+  var blue: Int = 0
+  var red: Int = 0
   
-  init(green: Int? = nil, blue: Int? = nil, red: Int? = nil) {
+  init(green: Int = 0, blue: Int = 0, red: Int = 0) {
     self.green = green
     self.blue = blue
     self.red = red
